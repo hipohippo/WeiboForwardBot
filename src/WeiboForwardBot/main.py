@@ -19,7 +19,7 @@ if __name__ == "__main__":
     application.bot_data["channel_id"] = int(config["channel_id"])
     application.bot_data["uid_file"] = os.path.join(os.path.dirname(__file__), config["uid_file"])
     application.bot_data["poll_interval"] = pd.Timedelta(f"{config['poll_interval']} min")
-    application.bot_data["publish_throttle"] = str(config["publish_throttle"])  ## 0.1s
+    application.bot_data["publish_throttle"] = float(config["publish_throttle"])  ## 0.1s
     application.bot_data["last_visit_time_dict"] = {}
 
     application.add_handler(CommandHandler("refresh", schedule_job))

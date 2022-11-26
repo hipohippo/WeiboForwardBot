@@ -23,7 +23,7 @@ async def poll_weibo(context: ContextTypes.DEFAULT_TYPE):
     logging.info(f"{len(posts)}")
     for post_html in posts:
         preview_on = Format.preview_on(post_html)
-        await asyncio.sleep(context.bot_data["throttleControl"])  ## required otherwise telegram will throttle
+        await asyncio.sleep(context.bot_data["publish_throttle"])  ## required otherwise telegram will throttle
         await context.bot.send_message(
             chat_id=context.bot_data["channel_id"],
             text=post_html,
