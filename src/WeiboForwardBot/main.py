@@ -12,8 +12,7 @@ logger = logging.getLogger(__name__)
 
 if __name__ == "__main__":
     config = ConfigParser()
-    # config.read("../../../weibo_forward_bot.ini")
-    config.read("d:/coding/python/weibo_forward_bot.ini")
+    config.read("../../../weibo_forward_bot.ini")
     config = config["weibo_forward_bot"]
 
     application = ApplicationBuilder().token(config["token"]).build()

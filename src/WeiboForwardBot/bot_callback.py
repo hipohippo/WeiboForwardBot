@@ -36,5 +36,5 @@ async def schedule_job(update, context: ContextTypes.DEFAULT_TYPE):
     # context.job_queue.run_once(poll_weibo, when=0, name="get_weibo_polling", chat_id=update.effective_chat.id)
     # context.job_queue.run_repeating(dummy, interval=60, first=20)
     context.job_queue.run_repeating(
-        poll_weibo, interval=int(context.bot_data["poll_interval"] / pd.Timedelta("1 second")), first=20
+        poll_weibo, interval=int(context.bot_data["poll_interval"] / pd.Timedelta("1 second")), first=5
     )
